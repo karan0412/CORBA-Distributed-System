@@ -1,0 +1,17 @@
+module PeerApp
+{
+  interface Register
+  {
+    long connect(in string name);
+  };
+  
+  interface Peer
+  {
+    long setup(in long max, in string nextName);
+    long startElection();
+    long message1(in long receivedMax);    
+    long message2(in long receivedLeft);
+    long announceLeader(in string name, in long max);
+    long passCoordinator();
+  };
+};
